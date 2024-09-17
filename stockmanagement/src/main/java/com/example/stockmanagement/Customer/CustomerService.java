@@ -24,6 +24,9 @@ public class CustomerService {
     public Customer addCustomer(CustomerDTO customerDTO) {
         Customer customer = new Customer();
 
+        customer.setCustomerName(customerDTO.getCustomerName());
+        customer.setEmail(customerDTO.getEmail());
+        customer.setContactInformation(customerDTO.getContactInformation());
         customer.setCreatedAt(customerDTO.getCreatedAt());
         return customerRepository.save(customer);
     }
