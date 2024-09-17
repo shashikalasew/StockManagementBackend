@@ -21,8 +21,10 @@ public class CustomerService {
         return customerRepository.findById(id).orElse(null);
     }
 
-    public Customer addCustomer(Customer customer) {
-        customer.setCreatedAt(java.time.LocalDateTime.now());
+    public Customer addCustomer(CustomerDTO customerDTO) {
+        Customer customer = new Customer();
+
+        customer.setCreatedAt(customerDTO.getCreatedAt());
         return customerRepository.save(customer);
     }
 
