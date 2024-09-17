@@ -13,7 +13,4 @@ public class ProductSupplierId implements Serializable {
         this.productId = productId;
         this.supplierId = supplierId;
     }
-
-    public ProductSupplierId() {
-    }
 }

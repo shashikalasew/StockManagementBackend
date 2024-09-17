@@ -1,7 +1,6 @@
 package com.example.stockmanagement.Product;
 
 import com.example.stockmanagement.ProductSupplier.ProductSupplier;
-import com.example.stockmanagement.Supplier.Supplier;
 import jakarta.persistence.*;
 import lombok.Data;
 

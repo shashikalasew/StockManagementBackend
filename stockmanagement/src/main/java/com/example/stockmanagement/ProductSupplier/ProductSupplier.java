@@ -4,7 +4,6 @@ import com.example.stockmanagement.Product.Product;
 import com.example.stockmanagement.Supplier.Supplier;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.context.annotation.Primary;
 
 import java.time.LocalDateTime;
 
