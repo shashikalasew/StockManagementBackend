@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StockmanagementApplication {
+public class StockManagementApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(StockmanagementApplication.class, args);
+		SpringApplication.run(StockManagementApplication.class, args);
 	}
 
 }

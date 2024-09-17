@@ -1,5 +1,4 @@
-package com.example.stockmanagement.Sales;
-
+package com.example.stockmanagement.InventoryTransaction;
 
 import com.example.stockmanagement.Product.Product;
 import com.example.stockmanagement.Users.User;
@@ -8,13 +7,14 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Entity
+
 @Data
-public class Sale {
+@Entity
+public class InventoryTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int saleId;
+    private int transactionId;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -23,9 +23,15 @@ public class Sale {
     @ManyToOne
     @JoinColumn(name = "user_id" )
     private User user;
-    private int quantitySold;
-    private double salePrice;
-    private LocalDateTime saleDate;
+
+    private int quantity;
+
+    @Enumerated(EnumType.ORDINAL)
+    private TransactionType transactionType;
+
+    private LocalDateTime transactionDate;
+
+
 
 
 }

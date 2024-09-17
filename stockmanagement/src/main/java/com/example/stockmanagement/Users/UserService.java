@@ -1,6 +1,7 @@
 package com.example.stockmanagement.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,10 @@ public class UserService {
     }
 
     public User addUser(User user) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+        String password = encoder.encode(user.getPassword());
+
+        user.setPassword(password);
         user.setCreatedAt(java.time.LocalDateTime.now());
         return userRepository.save(user);
     }

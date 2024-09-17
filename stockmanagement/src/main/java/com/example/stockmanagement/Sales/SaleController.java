@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/sale")
+@RequestMapping("/api/v1/sales")
 public class SaleController {
 
     @Autowired
@@ -29,13 +29,13 @@ public class SaleController {
     }
 
     @PostMapping
-    public Sale createSale(@RequestBody Sale sale) {
+    public Sale createSale(@RequestBody SaleDTO sale) {
         return saleService.createSale(sale);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Sale> updateSale(@PathVariable int id, @RequestBody Sale saleDetails) {
-        Sale updatedSale = saleService.updateSale(id, saleDetails);
+    public ResponseEntity<Sale> updateSale(@PathVariable int id, @RequestBody SaleDTO saleDTO) {
+        Sale updatedSale = saleService.updateSale(id, saleDTO);
         if (updatedSale != null) {
             return ResponseEntity.ok(updatedSale);
         }
