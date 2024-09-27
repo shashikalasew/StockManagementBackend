@@ -31,13 +31,13 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
-    public Customer updateCustomer(int id, Customer customerDetails) {
+    public Customer updateCustomer(int id, CustomerDTO customerDTO) {
         Customer customer = customerRepository.findById(id).orElse(null);
         if (customer != null) {
-            customer.setCustomerName(customerDetails.getCustomerName());
-            customer.setEmail(customerDetails.getEmail());
-            customer.setContactInformation(customerDetails.getContactInformation());
-
+            customer.setCustomerName(customerDTO.getCustomerName());
+            customer.setEmail(customerDTO.getEmail());
+            customer.setContactInformation(customerDTO.getContactInformation());
+            customer.setCreatedAt(customerDTO.getCreatedAt());
 
             return customerRepository.save(customer);
         }

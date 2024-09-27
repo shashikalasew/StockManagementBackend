@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/suppliers")
+@RequestMapping("/api/v1/supplier")
 public class SupplierController {
 
     @Autowired
@@ -28,13 +28,13 @@ public class SupplierController {
     }
 
     @PostMapping
-    public Supplier addSupplier(@RequestBody Supplier supplier) {
-        return supplierService.addSupplier(supplier);
+    public Supplier addSupplier(@RequestBody SupplierDTO supplierDTO) {
+        return supplierService.addSupplier(supplierDTO);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Supplier> updateSupplier(@PathVariable int id, @RequestBody Supplier supplierDetails) {
-        Supplier updatedSupplier = supplierService.updateSupplier(id, supplierDetails);
+    public ResponseEntity<Supplier> updateSupplier(@PathVariable int id, @RequestBody SupplierDTO supplierDTO) {
+        Supplier updatedSupplier = supplierService.updateSupplier(id, supplierDTO);
         if (updatedSupplier != null) {
             return ResponseEntity.ok(updatedSupplier);
         }

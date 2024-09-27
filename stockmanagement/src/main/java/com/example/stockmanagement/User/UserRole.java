@@ -1,4 +1,4 @@
-package com.example.stockmanagement.Users;
+package com.example.stockmanagement.User;
 
 public enum UserRole {
     ADMIN,

@@ -15,6 +15,7 @@ public class InventoryTransactionDTO {
     @JsonProperty("user_id")
     private int userId;
 
+    @JsonProperty("quantity")
     private int quantity;
 
     @JsonProperty("transaction_type")

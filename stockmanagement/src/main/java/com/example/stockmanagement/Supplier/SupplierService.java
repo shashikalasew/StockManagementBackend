@@ -19,22 +19,30 @@ public class SupplierService {
         return supplierRepository.findById(id).orElse(null);
     }
 
-    public Supplier addSupplier(Supplier supplier) {
+    public Supplier addSupplier(SupplierDTO supplierDTO) {
+        Supplier supplier = new Supplier();
+
+        supplier.setSupplierName(supplierDTO.getSupplierName());
+        supplier.setContactName(supplierDTO.getContactName());
+        supplier.setEmail(supplierDTO.getEmail());
+        supplier.setContactInformation(supplierDTO.getContactInformation());
+        supplier.setAddress(supplierDTO.getAddress());
+
         supplier.setCreatedAt(java.time.LocalDateTime.now());
+        supplier.setUpdatedAt(java.time.LocalDateTime.now());
         return supplierRepository.save(supplier);
     }
 
-    public Supplier updateSupplier(int id, Supplier supplierDetails) {
+    public Supplier updateSupplier(int id, SupplierDTO supplierDTO) {
         Supplier supplier = supplierRepository.findById(id).orElse(null);
         if (supplier != null) {
-            supplier.setSupplierName(supplierDetails.getSupplierName());
-            supplier.setContactName(supplierDetails.getContactName());
-            supplier.setEmail(supplierDetails.getEmail());
-            supplier.setContactInformation(supplierDetails.getContactInformation());
-            supplier.setAddress(supplierDetails.getAddress());
+            supplier.setSupplierName(supplierDTO.getSupplierName());
+            supplier.setContactName(supplierDTO.getContactName());
+            supplier.setEmail(supplierDTO.getEmail());
+            supplier.setContactInformation(supplierDTO.getContactInformation());
+            supplier.setAddress(supplierDTO.getAddress());
+
             supplier.setUpdatedAt(java.time.LocalDateTime.now());
-
-
             return supplierRepository.save(supplier);
         }
         return null;

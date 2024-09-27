@@ -2,8 +2,8 @@ package com.example.stockmanagement.InventoryTransaction;
 
 import com.example.stockmanagement.Product.Product;
 import com.example.stockmanagement.Product.ProductRepository;
-import com.example.stockmanagement.Users.User;
-import com.example.stockmanagement.Users.UserRepository;
+import com.example.stockmanagement.User.User;
+import com.example.stockmanagement.User.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

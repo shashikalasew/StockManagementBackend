@@ -1,4 +1,4 @@
-package com.example.stockmanagement.Users;
+package com.example.stockmanagement.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

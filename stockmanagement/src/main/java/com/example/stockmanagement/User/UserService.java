@@ -1,4 +1,4 @@
-package com.example.stockmanagement.Users;
+package com.example.stockmanagement.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,22 +20,32 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public User addUser(User user) {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-        String password = encoder.encode(user.getPassword());
+    public User addUser(UserDTO userDTO) {
+        User user = new User();
+        user.setUsername(userDTO.getUsername());
 
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+        String password = encoder.encode(userDTO.getPassword());
         user.setPassword(password);
+
+        user.setEmail(userDTO.getEmail());
+        user.setRole(userDTO.getRole());
         user.setCreatedAt(java.time.LocalDateTime.now());
         return userRepository.save(user);
     }
 
-    public User updateUser(int id, User userDetails) {
+    public User updateUser(int id, UserDTO userDTO) {
         User user = userRepository.findById(id).orElse(null);
         if (user != null) {
-            user.setUsername(userDetails.getUsername());
-            user.setPassword(userDetails.getPassword());
-            user.setEmail(userDetails.getEmail());
-            user.setRole(userDetails.getRole());
+            user.setUsername(userDTO.getUsername());
+
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+            String password = encoder.encode(userDTO.getPassword());
+            user.setPassword(password);
+
+            user.setEmail(userDTO.getEmail());
+            user.setRole(userDTO.getRole());
+            user.setCreatedAt(java.time.LocalDateTime.now());
             return userRepository.save(user);
         }
         return null;

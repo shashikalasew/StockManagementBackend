@@ -1,7 +1,7 @@
 package com.example.stockmanagement.InventoryTransaction;
 
 import com.example.stockmanagement.Product.Product;
-import com.example.stockmanagement.Users.User;
+import com.example.stockmanagement.User.User;
 import jakarta.persistence.*;
 import lombok.Data;
 

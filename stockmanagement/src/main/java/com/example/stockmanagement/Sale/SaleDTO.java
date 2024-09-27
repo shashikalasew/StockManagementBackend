@@ -1,4 +1,4 @@
-package com.example.stockmanagement.Sales;
+package com.example.stockmanagement.Sale;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;

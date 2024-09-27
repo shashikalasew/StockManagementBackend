@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "products")
+@Table(name = "product")
 public class Product {
 
     @Id
@@ -27,7 +27,6 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private Set<ProductSupplier> productSuppliers = new HashSet<>();
-
 
 }
 
