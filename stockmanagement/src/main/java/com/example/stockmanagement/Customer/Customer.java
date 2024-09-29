@@ -1,9 +1,6 @@
 package com.example.stockmanagement.Customer;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,9 +12,11 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
     private String customerName;
+
+    @Column(unique = true)
     private String email;
+
     private String contactInformation;
     private LocalDateTime createdAt;
-
 
 }

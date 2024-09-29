@@ -16,7 +16,10 @@ public class Supplier {
     private int supplierId;
     private String supplierName;
     private String contactName;
+
+    @Column(unique = true)
     private String email;
+
     private String contactInformation;
     private String address;
     private LocalDateTime createdAt;

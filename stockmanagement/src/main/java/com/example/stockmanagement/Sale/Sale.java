@@ -1,6 +1,5 @@
 package com.example.stockmanagement.Sale;
 
-
 import com.example.stockmanagement.Product.Product;
 import com.example.stockmanagement.User.User;
 import jakarta.persistence.*;
@@ -26,6 +25,5 @@ public class Sale {
     private int quantitySold;
     private double salePrice;
     private LocalDateTime saleDate;
-
 
 }
