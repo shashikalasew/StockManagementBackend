@@ -20,4 +20,5 @@ public class CustomerDTO {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @JsonProperty("created_at")
     private LocalDateTime createdAt;
+
 }
